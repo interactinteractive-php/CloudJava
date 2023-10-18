@@ -9,7 +9,7 @@ COPY key/id_rsa /root/.ssh/
 
 # Set the correct permissions for the SSH key
 RUN chmod 600 /root/.ssh/id_rsa
-RUN usermod  -u 100105000 payara
+RUN usermod  -u 1001 payara
 USER payara
 
 # Copy your WAR file from a URL or the local filesystem to the deployments directory
