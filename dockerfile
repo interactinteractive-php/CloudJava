@@ -34,7 +34,7 @@ ENV DB_DRIVER="mysql"
 RUN chmod -R +t /opt/payara/scripts
 RUN chmod -R +t /opt/payara/appserver
 RUN chmod -R +t /opt/payara/config
-RUN chmod -R o+rwx /opt/payara/deployments
+RUN chmod -R o+r /opt/payara/deployments/erp-services-1.0.war
 
 # Start supervisor
 CMD ["asadmin", "start-domain", "--verbose"]
