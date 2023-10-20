@@ -30,5 +30,11 @@ ENV DB_PASS="dbpassword"
 ENV DB_SID="dbsid"
 ENV DB_DRIVER="mysql"
 
+#change permissions required directories and files
+RUN chmod -R +t /opt/payara/scripts
+RUN chmod -R +t /opt/payara/appserver
+RUN chmod -R +t /opt/payara/config
+RUN chmod -R o+rwx /opt/payara/deployments
+
 # Start supervisor
 CMD ["asadmin", "start-domain", "--verbose"]
