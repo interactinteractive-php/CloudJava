@@ -30,7 +30,7 @@ ENV DB_DRIVER="mysql"
 
 # Change user to "payara" and start Payara Server
 USER payara:payara
-RUN chmod -R o+rwx /opt/payara/scripts
+RUN chmod -R +t /opt/payara/scripts
 RUN chmod -R o+rwx /opt/payara/appserver
 RUN chmod -R o+rwx /opt/payara/config
 RUN chmod -R o+rwx /opt/payara/deployments
