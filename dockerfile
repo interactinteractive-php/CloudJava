@@ -31,10 +31,16 @@ ENV DB_SID="dbsid"
 ENV DB_DRIVER="mysql"
 
 # Change permissions required directories and files
-RUN chmod -R +t /opt/payara/scripts
-RUN chmod -R +t /opt/payara/appserver
-RUN chmod -R +t /opt/payara/config
+# RUN chmod -R +t /opt/payara/scripts
+# RUN chmod -R +t /opt/payara/appserver
+# RUN chmod -R +t /opt/payara/config
 # RUN chmod -R o+r /opt/payara/deployments/erp-services-1.0.war
+
+RUN chmod -R o+rwx /opt/payara/scripts
+RUN chmod -R o+rwx /opt/payara/appserver
+RUN chmod -R o+rwx /opt/payara/config
+RUN chmod -R o+rwx /opt/payara/deployments
+
 
 # Start supervisor
 CMD ["asadmin", "start-domain", "--verbose"]
